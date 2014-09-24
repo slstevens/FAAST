@@ -15,4 +15,8 @@ describe Train do
 		expect{ train.disembark(passenger) }.to change{train.passenger_count}.by -1
 	end
 
+	it "should know what passengers are currently there" do
+		train.onboard(passenger)
+		expect(train.passengers).to eq [passenger]
+	end
 end

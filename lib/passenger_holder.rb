@@ -1,16 +1,12 @@
 module PassengerHolder 
 
-# 	attr_accessor :passengers, :capacity
+	attr_accessor :passengers, :capacity
 
-# 	DEFAULT_CAPACITY = 40
-
-# 	def initialize(options = {})
-# 		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
-# 		@passengers = passengers
-# 	end
-	attr_accessor :passengers
+	DEFAULT_CAPACITY = 40
 
 	def initialize(options = {})
+		@capacity = options.fetch(:capacity, DEFAULT_CAPACITY)
+		@passengers = passengers
 	end
 
 	def passengers
@@ -20,13 +16,10 @@ module PassengerHolder
 	def empty?
 		@passengers = []
 	end
-# 	def empty?
-# 		@passengers = []
-# 	end
 
-# 	def full?
-# 		passenger_count == capacity
-# 	end
+	def full?
+		passenger_count == capacity
+	end
 
 	def onboard(passenger)
 		passengers << passenger

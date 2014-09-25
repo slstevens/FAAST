@@ -6,6 +6,10 @@ describe Passenger do
 	let (:station) 		{ double :station }
 	let (:passenger) 	{ Passenger.new }
 
+	it "should have a wallet balance" do
+		expect(passenger.balance).to_not eq 0
+	end
+
 	it "should be able to top up his oyster card balance" do
 		passenger.top_up(2)
 		expect(passenger.balance).to eq 22
